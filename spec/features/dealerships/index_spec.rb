@@ -11,5 +11,7 @@ RSpec.describe 'Dealerships Index' do
     visit "/dealerships"
 
     expect(page).to have_content(@kendall.name)
+    expect(page).to have_content(@lithia.name)
+    expect(page).to have_content(@power.name)
   end
 end
