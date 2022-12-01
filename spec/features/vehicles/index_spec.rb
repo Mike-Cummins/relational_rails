@@ -10,7 +10,7 @@ RSpec.describe 'Vehicles Index' do
         @highlander = @kendall.vehicles.create!(make: 'Toyota', model: 'Highlander', year: 2021, sale_pending: false) 
         @supra = @kendall.vehicles.create!(make: 'Toyota', model: 'Supra', year: 2022, sale_pending: true)  
         visit '/vehicles'
-        save_and_open_page
+      
         expect(page).to have_content(@corolla.make)
         expect(page).to have_content(@corolla.model)
         expect(page).to have_content(@corolla.year)
