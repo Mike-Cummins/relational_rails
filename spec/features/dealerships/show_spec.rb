@@ -9,7 +9,7 @@ RSpec.describe 'Dealerships Show' do
 
   it 'shows individual dealerships by ID number and all of their data' do
     visit "/dealerships/#{@kendall.id}"
-    save_and_open_page
+
     expect(page).to have_content(@kendall.name)
     expect(page).to have_content(@kendall.id)
     expect(page).to have_content(@kendall.offers_financing)
