@@ -17,7 +17,8 @@ RSpec.describe 'Dealerships Index' do
 
   it 'sorts dealerships by most recent created_at date' do
     visit "/dealerships"
-    save_and_open_page
     
+    expect(@lithia.name).to appear_before(@kendall.name)
+    expect(@kendall.name).to appear_before(@power.name)
   end
 end
