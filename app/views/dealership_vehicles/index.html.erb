@@ -1,0 +1,7 @@
+<h1><%= @dealership.name%>'s Inventory</h1>
+  <% @vehicles.each do |vehicle| %>
+    <h3>Make: <%= vehicle.make %>
+      Model: <%= vehicle.model %></h3>
+    <p>Year: <%= vehicle.year %></p>
+    <p>Sale Pending: <%= vehicle.sale_pending %></p>
+  <% end %>
