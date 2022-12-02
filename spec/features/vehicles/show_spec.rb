@@ -18,7 +18,7 @@ RSpec.describe 'Vehicles Show' do
         expect(page).to_not have_content(@corolla.model)
       end
 
-      it 'has a link to /vehicles' do 
+      it 'has a link to /dealerships' do 
         visit "/vehicles/#{@camry.id}"
 
         expect(page).to have_content('All Dealerships')
@@ -26,6 +26,16 @@ RSpec.describe 'Vehicles Show' do
         click_on('All Dealerships')
 
         expect(current_path).to eq('/dealerships')
+      end
+
+      it 'has a link to /vehicles' do 
+        visit "/vehicles/#{@camry.id}"
+
+        expect(page).to have_content('All Vehicles')
+
+        click_on('All Vehicles')
+
+        expect(current_path).to eq('/vehicles')
       end
     end
   end

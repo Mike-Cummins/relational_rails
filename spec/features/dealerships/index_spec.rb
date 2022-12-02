@@ -22,7 +22,7 @@ RSpec.describe 'Dealerships Index' do
     expect(@kendall.name).to appear_before(@power.name)
   end
 
-  it 'has a link to /vehicles' do 
+  it 'has a link to /dealerships' do 
     visit "/dealerships"
 
     expect(page).to have_content('All Dealerships')
@@ -30,5 +30,15 @@ RSpec.describe 'Dealerships Index' do
     click_on('All Dealerships')
 
     expect(current_path).to eq('/dealerships')
+  end
+
+  it 'has a link to /vehicles' do 
+    visit "/dealerships"
+
+    expect(page).to have_content('All Vehicles')
+
+    click_on('All Vehicles')
+
+    expect(current_path).to eq('/vehicles')
   end
 end
