@@ -26,4 +26,14 @@ RSpec.describe 'Dealerships Show' do
 
     expect(page).to have_content("Total Inventory: 2")
   end
+
+  it 'has a link to /vehicles' do 
+    visit "/dealerships/#{@kendall.id}"
+
+    expect(page).to have_content('All Dealerships')
+
+    click_on('All Dealerships')
+
+    expect(current_path).to eq('/dealerships')
+  end
 end
