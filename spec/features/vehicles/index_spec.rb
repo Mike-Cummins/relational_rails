@@ -19,6 +19,16 @@ RSpec.describe 'Vehicles Index' do
         expect(page).to have_content(@highlander.model)
         expect(page).to have_content(@supra.model)
       end
+
+      it 'has a link to /vehicles' do 
+        visit "/vehicles"
+
+        expect(page).to have_content('All Dealerships')
+
+        click_on('All Dealerships')
+
+        expect(current_path).to eq('/dealerships')
+      end
     end
   end
 end

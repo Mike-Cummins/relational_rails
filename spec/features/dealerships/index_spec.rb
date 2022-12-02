@@ -21,4 +21,14 @@ RSpec.describe 'Dealerships Index' do
     expect(@lithia.name).to appear_before(@kendall.name)
     expect(@kendall.name).to appear_before(@power.name)
   end
+
+  it 'has a link to /vehicles' do 
+    visit "/dealerships"
+
+    expect(page).to have_content('All Dealerships')
+
+    click_on('All Dealerships')
+
+    expect(current_path).to eq('/dealerships')
+  end
 end
