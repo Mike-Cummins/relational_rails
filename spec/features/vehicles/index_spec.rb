@@ -50,7 +50,7 @@ RSpec.describe 'Vehicles Index' do
 
         expect(page).to have_content("Edit #{@supra.model}")
 
-        click_on("Edit #{@supra.name}")
+        click_on("Edit #{@supra.model}")
 
         expect(current_path).to eq("/vehicles/#{@supra.id}/edit")
       end
