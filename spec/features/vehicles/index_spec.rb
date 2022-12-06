@@ -3,12 +3,13 @@ require 'rails_helper'
 RSpec.describe 'Vehicles Index' do
   describe 'as a user' do
     describe 'when I visit /vehicles' do
-      it 'shows all vehicles' do
+      it 'shows all vehicles with true boolean values' do
         @kendall = Dealership.create!(name: 'Kendall', offers_financing: true, offers_shuttle: false, rating: 3)
-        @corolla = @kendall.vehicles.create!(make: 'Toyota', model: 'Corolla', year: 2021, sale_pending: false)
-        @camry = @kendall.vehicles.create!(make: 'Toyota', model: 'Camry', year: 2022, sale_pending: false)
-        @highlander = @kendall.vehicles.create!(make: 'Toyota', model: 'Highlander', year: 2021, sale_pending: false) 
-        @supra = @kendall.vehicles.create!(make: 'Toyota', model: 'Supra', year: 2022, sale_pending: true)  
+        @corolla = @kendall.vehicles.create!(make: 'Toyota', model: 'Corolla', year: 2021, sale_pending: true)
+        @camry = @kendall.vehicles.create!(make: 'Toyota', model: 'Camry', year: 2022, sale_pending: true)
+        @highlander = @kendall.vehicles.create!(make: 'Toyota', model: 'Highlander', year: 2021, sale_pending: true) 
+        @supra = @kendall.vehicles.create!(make: 'Toyota', model: 'Supra', year: 2022, sale_pending: true)
+        @runner = @kendall.vehicles.create!(make: 'Toyota', model: '4 Runner TRD Pro', year: 2022, sale_pending: false)
         visit '/vehicles'
       
         expect(page).to have_content(@corolla.make)
@@ -18,6 +19,7 @@ RSpec.describe 'Vehicles Index' do
         expect(page).to have_content(@camry.model)
         expect(page).to have_content(@highlander.model)
         expect(page).to have_content(@supra.model)
+        expect(page).to_not have_content(@runner.model)
       end
 
       it 'has a link to /dealerships' do 

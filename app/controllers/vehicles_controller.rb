@@ -1,6 +1,7 @@
 class VehiclesController < ApplicationController
   def index
-    @vehicles = Vehicle.all
+   
+    @vehicles = Vehicle.where(sale_pending: :true)
   end
 
   def show
