@@ -7,4 +7,8 @@ class Dealership < ApplicationRecord
   def vehicles_count
     vehicles.count
   end
+
+  def sort_by_alpha
+    vehicles.order(:model)
+  end
 end
