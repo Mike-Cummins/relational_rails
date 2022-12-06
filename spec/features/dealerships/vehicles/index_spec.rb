@@ -39,7 +39,7 @@ RSpec.describe 'Dealerships Vehicles Index' do
 
         click_on('Sort')
 
-        expect(@camry.model).to appear_before(@coroll.model)
+        expect(@camry.model).to appear_before(@corolla.model)
         expect(@corolla.model).to appear_before(@supra.model)
         expect(current_path).to eq("/dealerships/#{@kendall.id}/vehicles")
       end
