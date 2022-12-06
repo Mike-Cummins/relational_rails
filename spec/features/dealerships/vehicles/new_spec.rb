@@ -20,6 +20,6 @@ RSpec.describe 'Dealerships Vehicles New' do
 
     expect(current_path).to eq("/dealerships/#{@kendall.id}/vehicles")
     expect(page).to have_content('Civic')
-    save_and_open_page
+  
   end
 end
