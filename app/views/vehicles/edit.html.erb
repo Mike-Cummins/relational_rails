@@ -1,0 +1,11 @@
+<%= form_with url: "/vehicles/#{@vehicle.id}", method: :patch, local: true do |form| %>
+  <%= form.label :make %>
+  <%= form.text_field :make %>
+  <%= form.label :model %>
+  <%= form.text_field :model %>
+  <%= form.label :year %>
+  <%= form.text_field :year %>
+  <%= form.label :sale_pending %>
+  <%= form.text_field :sale_pending %>
+  <%= form.submit 'Update Vehicle' %>
+<% end %>
