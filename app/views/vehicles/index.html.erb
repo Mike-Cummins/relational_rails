@@ -3,5 +3,6 @@
   <h3>Make:  <%= vehicle.make %>  Model:  <%= vehicle.model %></h3>
   <p>Year: <%= vehicle.year %></p>
   <p>Sale Pending: <%= vehicle.sale_pending %></p>
-  <p>Dealer ID: <%= vehicle.dealership_id %>
+  <p>Dealer ID: <%= vehicle.dealership_id %></p>
+  <p><a href="/vehicles/<%= vehicle.id %>/edit"> Edit <%= vehicle.model %></a></p>
 <% end %>
