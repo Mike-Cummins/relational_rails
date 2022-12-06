@@ -24,6 +24,16 @@ RSpec.describe 'Dealerships Index' do
     expect(@kendall.name).to appear_before(@power.name)
   end
 
+  it 'has a link to all vehicles belonging to a specific dealer ID' do
+    visit "/dealerships/#{@kendall.id}"
+
+    expect(page).to have_content("View Inventory")
+
+    click_on('View Inventory')
+
+    expect(current_path).to eq("/dealerships/#{@kendall.id}/vehicles")
+  end
+
   it 'has a link to /dealerships' do 
     visit "/dealerships"
 
