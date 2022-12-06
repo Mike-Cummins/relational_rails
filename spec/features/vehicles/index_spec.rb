@@ -19,7 +19,7 @@ RSpec.describe 'Vehicles Index' do
         expect(page).to have_content(@camry.model)
         expect(page).to have_content(@highlander.model)
         expect(page).to have_content(@supra.model)
-        expect(page).to_not have_content(@runner.make)
+        expect(page).to_not have_content(@runner.model)
       end
 
       it 'has a link to /dealerships' do 
