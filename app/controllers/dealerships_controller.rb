@@ -26,6 +26,13 @@ class DealershipsController < ApplicationController
     redirect_to '/dealerships'
   end
 
+  def destroy
+    dealership = Dealership.find(params[:id])
+    dealership.delete
+    
+    redirect_to '/dealerships'
+  end
+
   private
   def dealership_params
     params.permit(:name, :offers_financing, :offers_shuttle, :rating)
