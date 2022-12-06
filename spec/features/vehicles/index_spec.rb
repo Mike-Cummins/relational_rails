@@ -3,13 +3,16 @@ require 'rails_helper'
 RSpec.describe 'Vehicles Index' do
   describe 'as a user' do
     describe 'when I visit /vehicles' do
-      it 'shows all vehicles with true boolean values' do
+      before :each do
         @kendall = Dealership.create!(name: 'Kendall', offers_financing: true, offers_shuttle: false, rating: 3)
         @corolla = @kendall.vehicles.create!(make: 'Toyota', model: 'Corolla', year: 2021, sale_pending: true)
         @camry = @kendall.vehicles.create!(make: 'Toyota', model: 'Camry', year: 2022, sale_pending: true)
         @highlander = @kendall.vehicles.create!(make: 'Toyota', model: 'Highlander', year: 2021, sale_pending: true) 
         @supra = @kendall.vehicles.create!(make: 'Toyota', model: 'Supra', year: 2022, sale_pending: true)
         @runner = @kendall.vehicles.create!(make: 'Toyota', model: '4 Runner TRD Pro', year: 2022, sale_pending: false)
+      end
+      it 'shows all vehicles with true boolean values' do
+       
         visit '/vehicles'
       
         expect(page).to have_content(@corolla.make)
@@ -40,6 +43,16 @@ RSpec.describe 'Vehicles Index' do
         click_on('All Vehicles')
 
         expect(current_path).to eq('/vehicles')
+      end
+
+      it 'has a link to update each vehicle' do
+        visit '/vehicles'
+
+        expect(page).to have_content("Edit #{@supra.model}")
+
+        click_on("Edit #{@supra.model}")
+
+        expect(current_path).to eq("/vehicles/#{@supra.id}/edit")
       end
     end
   end
