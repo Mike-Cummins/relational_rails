@@ -1,4 +1,5 @@
 <h1><%= @dealership.name%>'s Inventory</h1>
+<a href="/dealerships/<%= @dealership.id %>/vehicles/new">Create Vehicle</a>
   <% @vehicles.each do |vehicle| %>
     <h3>Make: <%= vehicle.make %>
       Model: <%= vehicle.model %></h3>
