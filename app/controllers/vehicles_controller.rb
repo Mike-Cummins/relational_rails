@@ -32,6 +32,13 @@ class VehiclesController < ApplicationController
     redirect_to "/vehicles/#{vehicle.id}"
   end
 
+  def destroy
+    vehicle = Vehicle.find(params[:id])
+    vehicle.destroy
+
+    redirect_to '/vehicles'
+  end
+
   private
   def vehicle_params
     params.permit(:make, :model, :year, :sale_pending)
