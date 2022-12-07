@@ -1,24 +1,9 @@
-# README
+Relational Rails Project - Dealerships and their Vehicles:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.7.4
 
-Things you may want to cover:
+* Rails 5.2.8
 
-* Ruby version
+* Database creation - PostgeSQL
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://drive.google.com/file/d/1BQLBFfIaewQkL4Yp7mWtrEjCjYTxmILJ/view?usp=sharing
