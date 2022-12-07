@@ -6,4 +6,4 @@ Relational Rails Project - Dealerships and their Vehicles:
 
 * Database creation - PostgeSQL
 
-https://drive.google.com/file/d/1BQLBFfIaewQkL4Yp7mWtrEjCjYTxmILJ/view?usp=sharing
+Link to schema: https://drive.google.com/file/d/1BQLBFfIaewQkL4Yp7mWtrEjCjYTxmILJ/view?usp=sharing
