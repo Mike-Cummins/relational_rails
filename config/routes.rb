@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   patch '/vehicles/:id', to: 'vehicles#update'
   get '/vehicles', to: 'vehicles#index'
   get '/vehicles/:id', to: 'vehicles#show'
+  delete '/vehicles/:id', to: 'vehicles#destroy'
 end
