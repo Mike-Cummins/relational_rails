@@ -1,5 +1,5 @@
 class Dealership < ApplicationRecord
-  has_many :vehicles
+  has_many :vehicles, dependent: :destroy
   def self.date_order
     self.all.order(created_at: :desc)
   end
